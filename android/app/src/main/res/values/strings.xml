@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">SannaBot</string>
+    <string name="app_name">الحسن المساعد الشخصي</string>
     <string name="accessibility_service_description">Sanna needs accessibility access to read and interact with other apps on your behalf – for example to automatically send a WhatsApp message without you having to tap Send yourself.</string>
 </resources>

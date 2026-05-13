@@ -25,6 +25,7 @@ import {
 
 // i18n
 import { t, setLocale } from './src/i18n';
+import ar from './src/i18n/locales/ar';
 
 // Services
 import { SkillLoader } from './src/agent/skill-loader';
@@ -188,7 +189,7 @@ interface AppPreferences {
   sttLanguage: 'system' | string;
   sttMode: 'auto' | 'offline' | 'online';
   /** App UI language. 'system' = detect from device locale. Falls back to 'en'. */
-  appLanguage: 'system' | string;
+  appLanguage: 'ar' | string;
   /** Max iterations for the main ConversationPipeline agent loop (default: 10) */
   maxIterations?: number;
   /** Max iterations for notification and scheduler sub-agents (default: 8) */
@@ -230,7 +231,7 @@ const DEFAULT_PREFS: AppPreferences = {
   darkMode: true,
   sttLanguage: 'system',
   sttMode: 'auto',
-  appLanguage: 'system',
+  appLanguage: 'ar',
   maxIterations: 10,
   maxSubAgentIterations: 8,
   maxAccessibilityIterations: 12,
