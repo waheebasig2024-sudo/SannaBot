@@ -55,7 +55,7 @@ if (typeof global !== 'undefined') {
   };
 }
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent('SannaBot', () => App);
 DebugFileLogger.writeSystemLog('LIFECYCLE', '🚀 JS runtime started');
 
 // Register the headless task for scheduled sub-agent execution.
