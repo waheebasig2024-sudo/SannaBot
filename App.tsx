@@ -92,7 +92,7 @@ import { SannaAvatar } from './src/components/SannaAvatar';
 
 // Local dev config (gitignored – never shipped to production)
 // If the file is missing (e.g. in CI/Production), empty defaults are used.
-let LOCAL_CONFIG: { openAIApiKey: string; claudeApiKey: string; selectedProvider: 'claude' | 'openai' | 'custom'; openAIModel?: string; claudeModel?: string; customApiKey?: string;customModelUrl?: string;customModelName?: string; spotifyClientId: string; googleWebClientId: string; picovoiceAccessKey: string; slackClientId: string; slackRedirectUrl: string; googleMapsApiKey: string; braveSearchApiKey: string; debugLogEnabled?: boolean; debugFileEnabled?: boolean } = {
+let LOCAL_CONFIG: { openAIApiKey: string; claudeApiKey: string; selectedProvider: 'claude' | 'openai' | 'custom' | 'gemini' | 'groq'; openAIModel?: string; claudeModel?: string; customApiKey?: string;customModelUrl?: string;customModelName?: string; spotifyClientId: string; googleWebClientId: string; picovoiceAccessKey: string; slackClientId: string; slackRedirectUrl: string; googleMapsApiKey: string; braveSearchApiKey: string; debugLogEnabled?: boolean; debugFileEnabled?: boolean } = {
   openAIApiKey: '',
   claudeApiKey: '',
   selectedProvider: 'openai',
@@ -181,7 +181,7 @@ function containsQuestion(text: string): boolean {
 
 /** App preferences (stored as JSON blob in Keychain) */
 interface AppPreferences {
-  selectedProvider: 'claude' | 'openai' | 'custom';
+  selectedProvider: 'claude' | 'openai' | 'custom' | 'gemini' | 'groq';
   wakeWordEnabled: boolean;
   enabledSkillNames: string[];
   drivingMode: boolean;
@@ -1083,7 +1083,7 @@ export default function App(): React.JSX.Element {
         : settings.selectedOpenAIModel;
 
     const provider = createLLMProvider({
-      provider: selectedProvider === 'claude' ? 'claude' : selectedProvider === 'custom' ? 'custom' : 'openai',
+      provider: selectedProvider === 'claude' ? 'claude' : selectedProvider === 'custom' ? 'custom' : selectedProvider === 'gemini' ? 'gemini' : selectedProvider === 'groq' ? 'groq' : 'openai',
       apiKey,
       model: selectedModel,
       customBaseUrl: selectedProvider === 'custom' ? customModelUrl : undefined,
@@ -1933,7 +1933,7 @@ export default function App(): React.JSX.Element {
           : settings.selectedOpenAIModel;
 
       const provider = createLLMProvider({
-        provider: selectedProvider === 'claude' ? 'claude' : selectedProvider === 'custom' ? 'custom' : 'openai',
+        provider: selectedProvider === 'claude' ? 'claude' : selectedProvider === 'custom' ? 'custom' : selectedProvider === 'gemini' ? 'gemini' : selectedProvider === 'groq' ? 'groq' : 'openai',
         apiKey,
         model: selectedModel,
         customBaseUrl: selectedProvider === 'custom' ? settings.customModelUrl : undefined,
