@@ -119,3 +119,11 @@ export async function fetchCustomModels(
     return [];
   }
 }
+
+export async function fetchGeminiModels(_apiKey: string): Promise<string[]> {
+  return ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+}
+
+export async function fetchGroqModels(_apiKey: string): Promise<string[]> {
+  return ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant', 'mixtral-8x7b-32768'];
+}
