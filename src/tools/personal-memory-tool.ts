@@ -101,7 +101,6 @@ export class PersonalMemoryTool implements Tool {
                 description: 'A concise stable personal fact in English (statement only, not a question, no meta-dialogue). Example: "Wedding anniversary is 14 May."',
                 minLength: 3,
                 maxLength: 240,
-                pattern: '^(?!.*\\?$).+',
               },
               category: {
                 type: 'string',
