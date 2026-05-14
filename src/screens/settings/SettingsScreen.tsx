@@ -44,8 +44,8 @@ interface SettingsScreenProps {
   onClaudeApiKeyChange: (key: string) => void;
   openAIApiKey: string;
   onOpenAIApiKeyChange: (key: string) => void;
-  selectedProvider: 'claude' | 'openai' | 'custom';
-  onProviderChange: (provider: 'claude' | 'openai' | 'custom') => void;
+  selectedProvider: 'claude' | 'openai' | 'custom' | 'gemini' | 'groq';
+  onProviderChange: (provider: 'claude' | 'openai' | 'custom' | 'gemini' | 'groq') => void;
   selectedOpenAIModel: string;
   onOpenAIModelChange: (model: string) => void;
   selectedClaudeModel: string;
